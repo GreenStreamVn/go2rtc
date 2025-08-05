@@ -68,42 +68,15 @@ func main() {
 
 	// 4. Other sources and servers
 
-	hass.Init()       // hass source, Hass API server
-	onvif.Init()      // onvif source, ONVIF API server
-	webtorrent.Init() // webtorrent source, WebTorrent module
-	wyoming.Init()
+	onvif.Init() // onvif source, ONVIF API server
 
 	// 5. Other sources
 
-	rtmp.Init()     // rtmp source
-	exec.Init()     // exec source
-	ffmpeg.Init()   // ffmpeg source
-	echo.Init()     // echo source
-	ivideon.Init()  // ivideon source
-	http.Init()     // http/tcp source
-	dvrip.Init()    // dvrip source
-	tapo.Init()     // tapo source
-	isapi.Init()    // isapi source
-	mpegts.Init()   // mpegts passive source
-	roborock.Init() // roborock source
-	homekit.Init()  // homekit source
-	ring.Init()     // ring source
-	nest.Init()     // nest source
-	bubble.Init()   // bubble source
-	expr.Init()     // expr source
-	gopro.Init()    // gopro source
-	doorbird.Init() // doorbird source
-	v4l2.Init()     // v4l2 source
-	alsa.Init()     // alsa source
-	flussonic.Init()
-	eseecloud.Init()
-	yandex.Init()
-
-	// 6. Helper modules
-
-	ngrok.Init() // ngrok module
-	srtp.Init()  // SRTP server
-	debug.Init() // debug API
+	rtmp.Init()   // rtmp source
+	exec.Init()   // exec source
+	ffmpeg.Init() // ffmpeg source
+	http.Init()   // http/tcp source
+	mpegts.Init() // mpegts passive source
 
 	// 7. Go
 
