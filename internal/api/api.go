@@ -34,7 +34,7 @@ func Init() {
 	}
 
 	// default config
-	cfg.Mod.Listen = ":1984"
+	cfg.Mod.Listen = ":8888"
 
 	// load config from YAML
 	app.LoadConfig(&cfg)
@@ -47,10 +47,10 @@ func Init() {
 	log = app.GetLogger("api")
 
 	initStatic(cfg.Mod.StaticDir)
-	HandleFunc(cfg.Api.HealthcheckEndpoint, func(w http.ResponseWriter, request *http.Request) {
+	HandleFunc("alive", func(w http.ResponseWriter, request *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		w.Header().Set("Content-Type", "application/json")
-		w.Write([]bytes("Hi"))
+		w.Write([]byte("Hi"))
 	})
 	HandleFunc("api", apiHandler)
 	HandleFunc("api/config", configHandler)
