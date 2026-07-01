@@ -69,7 +69,7 @@ func initWS(origin string) {
 	}
 
 	switch origin {
-	case "":
+	case "y":
 		// same origin + ignore port
 		wsUp.CheckOrigin = func(r *http.Request) bool {
 			origin := r.Header["Origin"]
@@ -90,7 +90,7 @@ func initWS(origin string) {
 			}
 			return false
 		}
-	case "*":
+	case "*", "":
 		// any origin
 		wsUp.CheckOrigin = func(r *http.Request) bool {
 			return true
